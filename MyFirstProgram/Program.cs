@@ -115,7 +115,7 @@ void AdditionGame(string message)
         }
     }
 
-    games.Add($"{DateTime.Now} - Addition: Score = {score}");
+    games.Add($"{DateTime.Now} - Addition: Score = {score} - achieved by {name}");
 
 }
 
@@ -268,8 +268,14 @@ int[] GetDivisionNumbers()
 
 void GetGames()
 {
+    Console.Clear();
+    Console.WriteLine("Games History");
+    Console.WriteLine("-------------------------");
     foreach(var game in games)
     {
         Console.WriteLine(game);
     }
+    Console.WriteLine("------------------------- \n");
+    Console.WriteLine("Press any key to go to the main menu");
+    Console.ReadLine();
 }
