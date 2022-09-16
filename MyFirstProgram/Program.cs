@@ -32,12 +32,12 @@ void Menu(string name)
         {
             Console.Clear();
             Console.WriteLine($@"What game would you like to play today? Choose from the options below:
-            V - View Previous Games
-            A - Addition
-            S - Subtraction
-            M - Multiplaction
-            D - Division
-            Q - Quit the program");
+V - View Previous Games
+A - Addition
+S - Subtraction
+M - Multiplaction
+D - Division
+Q - Quit the program");
         Console.WriteLine("-----------------------------------------------------------");
 
         var gameSelected = Console.ReadLine();
@@ -74,9 +74,6 @@ void Menu(string name)
 
 void AdditionGame(string message)
 {
-   
-    
-
     var random = new Random();
     var score = 0;
 
@@ -115,8 +112,12 @@ void AdditionGame(string message)
         }
     }
 
-    games.Add($"{DateTime.Now} - Addition: Score = {score} - achieved by {name}");
+    AddToHistory(score, "Addition");
+}
 
+void AddToHistory(int gameScore, string gameType)
+{
+    games.Add($"{DateTime.Now} - {gameType} : {gameScore} pts");
 }
 
 void SubtractionGame(string message)
@@ -156,8 +157,9 @@ void SubtractionGame(string message)
             Console.WriteLine($"Game over. Your final score is {score}. Press any key to go back to the main menu.");
             Console.ReadLine();
         }
-
+        
     }
+AddToHistory(score, "Subtraction");
 }
 
 void MultiplcationGame(string message)
@@ -198,6 +200,8 @@ void MultiplcationGame(string message)
             Console.ReadLine();
         }
     }
+
+    AddToHistory(score, "Multiplaction");
 }
 
 void DivisionGame(string message)
@@ -233,6 +237,8 @@ void DivisionGame(string message)
             Console.ReadLine();
         }
     }
+
+    AddToHistory(score, "Division");
 
 }
 
