@@ -63,26 +63,34 @@ namespace MyFirstProgram
                 firstNumber = random.Next(1, 9);
                 secondNumber = random.Next(1, 9);
 
-
-                Console.WriteLine($"{firstNumber} - {secondNumber}");
-                var result = Console.ReadLine();
-
-                if (int.Parse(result) == firstNumber - secondNumber)
+                if (firstNumber - secondNumber > 0)
                 {
-                    Console.WriteLine("Your answer was correct! Press any key to continue");
-                    Console.ReadLine();
-                    score++;
+                    Console.WriteLine($"{firstNumber} - {secondNumber}");
+                    var result = Console.ReadLine();
+
+                    if (int.Parse(result) == firstNumber - secondNumber)
+                    {
+                        Console.WriteLine("Your answer was correct! Press any key to continue");
+                        Console.ReadLine();
+                        score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your answer was incorrect! Press any key to continue");
+                        Console.ReadLine();
+                    }
+
+                    if (i == 4)
+                    {
+                        Console.WriteLine($"Game over. Your final score is {score}. Press any key to go back to the main menu.");
+                        Console.ReadLine();
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Your answer was incorrect! Press any key to continue");
-                    Console.ReadLine();
-                }
-
-                if (i == 4)
-                {
-                    Console.WriteLine($"Game over. Your final score is {score}. Press any key to go back to the main menu.");
-                    Console.ReadLine();
+                    // decrement the i variable so the loop/attempt doesn't count against the user
+                    i--;
+                    
                 }
 
             }
