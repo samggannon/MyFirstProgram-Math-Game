@@ -1,4 +1,4 @@
-﻿
+﻿using MyFirstProgram.Models;
 
 namespace MyFirstProgram
 {
@@ -44,7 +44,7 @@ namespace MyFirstProgram
                 }
             }
 
-            Helpers.AddToHistory(score, "Addition");
+            Helpers.AddToHistory(score, GameType.Addition);
         }
 
         internal void SubtractionGame(string message)
@@ -94,7 +94,7 @@ namespace MyFirstProgram
                 }
 
             }
-            Helpers.AddToHistory(score, "Subtraction");
+            Helpers.AddToHistory(score, GameType.Subtraction);
         }
 
         internal void MultiplcationGame(string message)
@@ -136,7 +136,7 @@ namespace MyFirstProgram
                 }
             }
 
-            Helpers.AddToHistory(score, "Multiplaction");
+            Helpers.AddToHistory(score, GameType.Multiplication);
         }
 
         internal void DivisionGame(string message)
@@ -173,7 +173,7 @@ namespace MyFirstProgram
                 }
             }
 
-            Helpers.AddToHistory(score, "Division");
+            Helpers.AddToHistory(score, GameType.Division);
 
         }
 
